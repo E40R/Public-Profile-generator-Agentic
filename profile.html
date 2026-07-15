@@ -421,7 +421,7 @@
         <div class="exec-summary-grid">
             <div class="profile-photo-wrapper">
                 {% if profile.photo_url %}
-                    <img src="{{ profile.photo_url }}" alt="{{ profile.full_name }}" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <img src="{{ profile.photo_url }}" alt="{{ profile.full_name }}" class="profile-photo" onerror="if (!this.getAttribute('data-tried-local')) { this.setAttribute('data-tried-local', 'true'); this.src = 'sundar_pichai.jpg'; } else { this.style.display='none'; this.nextElementSibling.style.display='block'; }">
                     <div class="photo-placeholder" style="display: none;">👤</div>
                 {% else %}
                     <div class="photo-placeholder">👤</div>
