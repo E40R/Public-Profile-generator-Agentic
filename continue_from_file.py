@@ -62,9 +62,23 @@ def continue_from_created_files(file_path: str = "outputs/sundar_pichai_combined
             src_name=r["source"],
             src_url=r["url"],
             src_content=r["content"],
-            pre_photo_url="https://upload.wikimedia.org/wikipedia/commons/d/d6/Sundar_Pichai_%282023%29_%28cropped%29.jpg" if "Wikipedia" in r["source"] else None
+            pre_photo_url="https://upload.wikimedia.org/wikipedia/commons/c/c3/Sundar_Pichai_-_2023_%28cropped%29.jpg" if "Wikipedia" in r["source"] else None
         )
         extracted_sources.append(ext)
+
+    # Ensure local image copy exists for reliable local file:// viewing
+    try:
+        import urllib.request, ssl
+        ctx = ssl._create_unverified_context()
+        img_url = "https://upload.wikimedia.org/wikipedia/commons/c/c3/Sundar_Pichai_-_2023_%28cropped%29.jpg"
+        req = urllib.request.Request(img_url, headers={'User-Agent': 'Mozilla/5.0'})
+        res = urllib.request.urlopen(req, context=ctx)
+        img_data = res.read()
+        os.makedirs("outputs", exist_ok=True)
+        open("outputs/sundar_pichai.jpg", "wb").write(img_data)
+        print("[*] Verified and saved local portrait image to outputs/sundar_pichai.jpg")
+    except Exception as e:
+        print(f"[*] Note: Could not download local image backup: {e}")
 
     print(f"[*] Re-extracted {len(extracted_sources)} structured records.")
 
@@ -112,3 +126,4 @@ def continue_from_created_files(file_path: str = "outputs/sundar_pichai_combined
 if __name__ == "__main__":
     file_arg = sys.argv[1] if len(sys.argv) > 1 else "outputs/sundar_pichai_combined_sources.md"
     continue_from_created_files(file_arg)
+
