@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFILE: SUNDAR PICHAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1E3A8A;
+            --accent-blue: #3B82F6;
+            --light-blue: #EFF6FF;
+            --border-blue: #BFDBFE;
+            --primary-green: #065F46;
+            --accent-green: #10B981;
+            --light-green: #ECFDF5;
+            --border-green: #A7F3D0;
+            --amber-accent: #D97706;
+            --amber-light: #FFFBEB;
+            --text-dark: #1F2937;
+            --text-muted: #4B5563;
+            --bg-page: #F8FAFC;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            border: 1px solid #E2E8F0;
+        }
+
+        /* Header Title */
+        .header-title {
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        /* Executive Summary Section (Photo + Text) */
+        .exec-summary-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 36px;
+        }
+
+        .profile-photo-wrapper {
+            width: 240px;
+            height: 260px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 3px solid #E2E8F0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            background-color: #F1F5F9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            font-size: 48px;
+            color: #94A3B8;
+        }
+
+        .summary-card {
+            background-color: var(--light-blue);
+            border: 1px solid var(--border-blue);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--primary-blue);
+        }
+
+        .summary-text {
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        /* Basic Details Table */
+        .details-table-wrapper {
+            margin-bottom: 36px;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        table.details-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table.details-table th {
+            background-color: #F8FAFC;
+            color: var(--primary-blue);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 14px 12px;
+            border-bottom: 2px solid #E2E8F0;
+            border-right: 1px solid #E2E8F0;
+            text-transform: uppercase;
+        }
+
+        table.details-table th:last-child {
+            border-right: none;
+        }
+
+        table.details-table td {
+            padding: 16px 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            border-right: 1px solid #E2E8F0;
+        }
+
+        table.details-table td:last-child {
+            border-right: none;
+        }
+
+        /* Biography Section */
+        .bio-section {
+            margin-bottom: 36px;
+        }
+
+        .bio-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-dark);
+            padding: 4px 0;
+        }
+
+        /* Grid layout for Timeline & Education */
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+            margin-bottom: 36px;
+            border-top: 1px solid #E2E8F0;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 30px 0;
+        }
+
+        /* Career Timeline */
+        .timeline-list {
+            list-style: none;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background-color: var(--primary-blue);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -19px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--primary-blue);
+            min-width: 95px;
+            font-size: 14px;
+        }
+
+        .timeline-event {
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+
+        /* Education List */
+        .education-list {
+            list-style: none;
+            padding-left: 6px;
+        }
+
+        .education-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .education-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 18px;
+            top: -2px;
+        }
+
+        /* Interests Pills */
+        .interests-container {
+            margin-bottom: 24px;
+        }
+
+        .interests-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .interest-pill {
+            background-color: #F1F5F9;
+            color: var(--primary-blue);
+            font-weight: 500;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #CBD5E1;
+        }
+
+        /* Three Column Bottom Grid (Net Worth + Recent News + References) */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr 260px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .networth-card {
+            background-color: var(--light-green);
+            border: 1px solid var(--border-green);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .networth-card .section-title {
+            color: var(--primary-green);
+            justify-content: center;
+        }
+
+        .networth-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 12px 0;
+        }
+
+        .networth-note {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .news-card {
+            background-color: #FFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .news-card .section-title {
+            color: var(--amber-accent);
+        }
+
+        .news-list {
+            list-style: none;
+            padding-left: 4px;
+        }
+
+        .news-item {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-dark);
+        }
+
+        .news-item::before {
+            content: '▪';
+            position: absolute;
+            left: 0;
+            color: var(--amber-accent);
+            font-weight: bold;
+        }
+
+        .references-card {
+            background-color: var(--light-blue);
+            border: 1px solid var(--border-blue);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .references-list {
+            list-style: none;
+        }
+
+        .reference-item {
+            margin-bottom: 8px;
+        }
+
+        .reference-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .reference-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Disclosure Box */
+        .disclosure-box {
+            margin-top: 30px;
+            background-color: var(--amber-light);
+            border-left: 4px solid var(--amber-accent);
+            padding: 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #78350F;
+        }
+
+        .disclosure-box h4 {
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        @media (max-width: 900px) {
+            .exec-summary-grid, .two-column-grid, .bottom-grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-photo-wrapper {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Title -->
+        <h1 class="header-title">PROFILE: SUNDAR PICHAI</h1>
+
+        <!-- Executive Summary Section -->
+        <div class="exec-summary-grid">
+            <div class="profile-photo-wrapper">
+                
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Sundar_Pichai_%282023%29_%28cropped%29.jpg" alt="Sundar Pichai" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="photo-placeholder" style="display: none;">👤</div>
+                
+            </div>
+            <div class="summary-card">
+                <div class="section-title">
+                    <span>👤 Executive Summary</span>
+                </div>
+                <p class="summary-text">Sundar Pichai (born June 10, 1972) is an Indian-American (born in Madurai, Tamil Nadu, India) business executive serving as CEO of Alphabet and Google.</p>
+            </div>
+        </div>
+
+        <!-- Basic Details Table -->
+        <div class="details-table-wrapper">
+            <table class="details-table">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Nationality</th>
+                        <th>Current Role / Occupation</th>
+                        <th>Industry</th>
+                        <th>Current City</th>
+                        <th>Current Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sundar Pichai</td>
+                        <td>Indian-American (born in Madurai, Tamil Nadu, India)</td>
+                        <td>CEO of Alphabet and Google</td>
+                        <td>Technology</td>
+                        <td>United States</td>
+                        <td>United States</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Biography Section -->
+        <div class="bio-section">
+            <div class="section-title">
+                <span>📖 Biography / Summary</span>
+            </div>
+            <p class="bio-text">Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai (pronounced: ), is an Indian–American business executive who has been the CEO of Google since 2015 and the CEO of its parent company Alphabet Inc. since 2019.
+Pichai began his career as a materials engineer. Following a short stint at the management consulting firm McKinsey & Co., Pichai joined Google in 2004, where he led the product management and innovation efforts for a suite of Google's client software products, including Google Chrome and ChromeOS, as well as being largely responsible for Google Drive. In addition, he went on to oversee the development of other applications such as Gmail and Google Maps.
+As of February 2026, his net worth is estimated at US$1.6 billion.</p>
+        </div>
+
+        <!-- Two Column Grid: Career Timeline & Education -->
+        <div class="two-column-grid">
+            <div class="timeline-col">
+                <div class="section-title">
+                    <span>📈 Career Timeline</span>
+                </div>
+                <ul class="timeline-list">
+                    
+                        <li class="timeline-item">
+                            <span class="timeline-year">2004</span>
+                            <span class="timeline-event">Joined Google leading product management for Chrome and Drive</span>
+                        </li>
+                    
+                        <li class="timeline-item">
+                            <span class="timeline-year">2015</span>
+                            <span class="timeline-event">Appointed Chief Executive Officer of Google</span>
+                        </li>
+                    
+                        <li class="timeline-item">
+                            <span class="timeline-year">2019</span>
+                            <span class="timeline-event">Appointed Chief Executive Officer of Alphabet Inc.</span>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="education-col">
+                <div class="section-title">
+                    <span>🎓 Education</span>
+                </div>
+                <ul class="education-list">
+                    
+                        <li class="education-item">B.Tech in Metallurgical Engineering from IIT Madras</li>
+                    
+                        <li class="education-item">M.S. in Material Sciences from Stanford University</li>
+                    
+                        <li class="education-item">MBA from Wharton School of the University of Pennsylvania</li>
+                    
+                </ul>
+
+                <div class="interests-container" style="margin-top: 32px;">
+                    <div class="section-title">
+                        <span>❤️ Interests & Focus</span>
+                    </div>
+                    <div class="interests-grid">
+                        
+                            <span class="interest-pill">Technology</span>
+                        
+                            <span class="interest-pill">Artificial Intelligence</span>
+                        
+                            <span class="interest-pill">Cloud Computing</span>
+                        
+                            <span class="interest-pill">Leadership</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Three Column Grid: Net Worth + Recent News + References -->
+        <div class="bottom-grid">
+            <!-- Net Worth Card -->
+            <div class="networth-card">
+                <div class="section-title">
+                    <span>💲 Net Worth</span>
+                </div>
+                <div class="networth-value">US$1.6 billion (from public sources)</div>
+                <p class="networth-note">
+                    
+                        Estimate compiled from publicly available sources. Figures may vary across reports and over time.
+                    
+                </p>
+            </div>
+
+            <!-- Recent News Card -->
+            <div class="news-card">
+                <div class="section-title" style="color: #D97706;">
+                    <span>📰 Recent News or Activities</span>
+                </div>
+                <ul class="news-list">
+                    
+                        <li class="news-item">Continues strategic leadership role</li>
+                    
+                </ul>
+            </div>
+
+            <!-- References Card -->
+            <div class="references-card">
+                <div class="section-title">
+                    <span>🔗 References</span>
+                </div>
+                <ul class="references-list">
+                    
+                        <li class="reference-item">
+                            <a href="https://en.wikipedia.org/wiki/Sundar_Pichai" target="_blank" class="reference-link">
+                                ↗ Wikipedia
+                            </a>
+                        </li>
+                    
+                        <li class="reference-item">
+                            <a href="https://en.m.wikipedia.org/wiki/Sundar_Pichai" target="_blank" class="reference-link">
+                                ↗ Web Search (Sundar Pichai - Wikipedia)
+                            </a>
+                        </li>
+                    
+                        <li class="reference-item">
+                            <a href="https://www.linkedin.com/in/sundarpichai" target="_blank" class="reference-link">
+                                ↗ Web Search (Sundar Pichai - CEO at Google | LinkedIn)
+                            </a>
+                        </li>
+                    
+                        <li class="reference-item">
+                            <a href="https://www.forbes.com/profile/sundar-pichai/" target="_blank" class="reference-link">
+                                ↗ Web Search (Sundar Pichai - Forbes)
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <!-- Disclosure Box if any conflicts or missing items exist -->
+        
+        <div class="disclosure-box">
+            <h4>⚠️ Missing or Conflicting Information Disclosure</h4>
+            <ul style="margin-left: 20px; margin-top: 6px;">
+                
+                    <li>Profile synthesized using fast verified text extraction due to API rate limits.</li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</body>
+</html>

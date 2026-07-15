@@ -1,0 +1,61 @@
+{
+  "full_name": "Sundar Pichai",
+  "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Sundar_Pichai_%282023%29_%28cropped%29.jpg",
+  "nationality": "Indian-American (born in Madurai, Tamil Nadu, India)",
+  "current_role": "CEO of Alphabet and Google",
+  "industry": "Technology",
+  "current_city_country": "United States",
+  "executive_summary": "Sundar Pichai (born June 10, 1972) is an Indian-American (born in Madurai, Tamil Nadu, India) business executive serving as CEO of Alphabet and Google.",
+  "biography": "Pichai Sundararajan (born June 10, 1972), better known as Sundar Pichai (pronounced: ), is an Indian\u2013American business executive who has been the CEO of Google since 2015 and the CEO of its parent company Alphabet Inc. since 2019.\nPichai began his career as a materials engineer. Following a short stint at the management consulting firm McKinsey & Co., Pichai joined Google in 2004, where he led the product management and innovation efforts for a suite of Google's client software products, including Google Chrome and ChromeOS, as well as being largely responsible for Google Drive. In addition, he went on to oversee the development of other applications such as Gmail and Google Maps.\nAs of February 2026, his net worth is estimated at US$1.6 billion.",
+  "career_timeline": [
+    {
+      "year": "2004",
+      "event": "Joined Google leading product management for Chrome and Drive"
+    },
+    {
+      "year": "2015",
+      "event": "Appointed Chief Executive Officer of Google"
+    },
+    {
+      "year": "2019",
+      "event": "Appointed Chief Executive Officer of Alphabet Inc."
+    }
+  ],
+  "education": [
+    "B.Tech in Metallurgical Engineering from IIT Madras",
+    "M.S. in Material Sciences from Stanford University",
+    "MBA from Wharton School of the University of Pennsylvania"
+  ],
+  "interests": [
+    "Technology",
+    "Artificial Intelligence",
+    "Cloud Computing",
+    "Leadership"
+  ],
+  "estimated_net_worth": "US$1.6 billion (from public sources)",
+  "net_worth_details_or_conflicts": "Estimate compiled from publicly available sources. Figures may vary across reports and over time.",
+  "recent_news": [
+    "Continues strategic leadership role"
+  ],
+  "references": [
+    {
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sundar_Pichai"
+    },
+    {
+      "source": "Web Search (Sundar Pichai - Wikipedia)",
+      "url": "https://en.m.wikipedia.org/wiki/Sundar_Pichai"
+    },
+    {
+      "source": "Web Search (Sundar Pichai - CEO at Google | LinkedIn)",
+      "url": "https://www.linkedin.com/in/sundarpichai"
+    },
+    {
+      "source": "Web Search (Sundar Pichai - Forbes)",
+      "url": "https://www.forbes.com/profile/sundar-pichai/"
+    }
+  ],
+  "missing_or_conflicting_info": [
+    "Profile synthesized using fast verified text extraction due to API rate limits."
+  ]
+}
